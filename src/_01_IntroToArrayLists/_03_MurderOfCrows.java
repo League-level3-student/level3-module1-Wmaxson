@@ -15,6 +15,8 @@ import java.util.Random;
 
 import javax.swing.JOptionPane;
 
+import org.junit.platform.launcher.listeners.LegacyReportingUtils;
+
 public class _03_MurderOfCrows {
 
     ArrayList<Crow> theMurder = new ArrayList<Crow>();
@@ -33,10 +35,23 @@ public class _03_MurderOfCrows {
         
         /* 2. How many innocent crows had to die before the diamond was found? */
     	
+    	for (int i = 0; i < theMurder.size(); i++) {
+    			ArrayList<String> sc = new ArrayList<String>();
+    			sc = theMurder.get(i).getStomachContents();
+    		for (int j = 0; j < theMurder.get(i).getStomachContents().size(); j++) {
+    			//System.out.println(sc.get((j)));
+    			//System.out.println("\n");
+    			if (sc.get(j).equals("diamond")) {
+					System.out.println(theMurder.get(i).getName() + " was the eater of diamonds! " + (i+1) + " had to die. Sorry");
+					break;
+				}
+			}
+			
+		}
     }
 
     private void initializeCrows() {
-        theMurder.add(new Crow("Rok"));
+        theMurder.add(new Crow("Rok")); 
         theMurder.add(new Crow("Merle"));
         theMurder.add(new Crow("Poe"));
         theMurder.add(new Crow("Grenwyn"));

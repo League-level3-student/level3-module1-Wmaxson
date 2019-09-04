@@ -23,9 +23,10 @@ public class _02_GuestBook implements ActionListener {
 	JPanel panel;
 	JButton buttonAdd;
 	JButton buttonView;
-	
+	String fullBook;
 	ArrayList<String> list ;
 	_02_GuestBook() {
+	fullBook = "The line is empty!";
 	frame = new JFrame();
 	panel = new JPanel();
 	frame.add(panel);
@@ -57,7 +58,15 @@ public class _02_GuestBook implements ActionListener {
 			list.add(add);
 		}
 		if (e.getSource() == buttonView) {
-			JOptionPane.showMessageDialog(parentComponent, message);
+			
+			fullBook = "";
+			
+			for (int i = 0; i < list.size(); i++) {
+				
+				fullBook += list.get(i) + " ";
+			}
+			JOptionPane.showMessageDialog(null, fullBook);
+			
 		}
 	}
 	

@@ -16,6 +16,24 @@ public class _05_LongChipCompetition {
 
 	public static void main(String[] args) {
 		_05_LongChipCompetition lcc = new _05_LongChipCompetition();
+	
+	}
+	_05_LongChipCompetition(){
+		initializeBeatles();
+		ArrayList<Chip> sc;
+
+		for (int i = 0; i < theBeatles.size(); i++) {
+			sc = theBeatles.get(i).getChips();
+		for (int j = 0; j < theBeatles.get(i).getChips().size(); j++) {
+			//System.out.println(sc.get((j)));
+			//System.out.println("\n");
+			if (sc.get(j).equals("diamond")) {
+				System.out.println(theBeatles.get(i).getName() + " was the eater of diamonds! " + (i+1) + " had to die. Sorry");
+				break;
+			}
+		}
+		
+	}
 		
 	}
 	
@@ -32,6 +50,7 @@ public class _05_LongChipCompetition {
 	
 	public ArrayList<Beatle> getTheBand(){
 		return theBeatles;
+		
 	}
 }
 
