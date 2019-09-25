@@ -48,13 +48,24 @@ public class _02_TextUndoRedo implements KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-	
-		if (e.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
+		text = Label.getText();
+		if (e.getKeyCode() != KeyEvent.VK_BACK_SPACE && e.getKeyCode() != KeyEvent.VK_DELETE) {
+			text+=e.getKeyChar();
+			Label.setText(text);
+		} else if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE ){
+			text = Label.getText();
+			String s = text.substring(0,text.length()-1);
+			undo.push(text.charAt(text.length()-1));
+			text = s;
+			Label.setText(text);
+		} else if (e.getKeyCode() == KeyEvent.VK_DELETE && undo.size() > 0) {
+			System.out.println("yeet");
+			text = Label.getText();
+			text+=undo.pop();
+			Label.setText(text);
 			
 		}
-	text+=e.getKeyChar();
-	undo.push(e.getKeyChar());
-	Label.setText(text);
+	
 	}
 	@Override
 	public void keyReleased(KeyEvent e) {
