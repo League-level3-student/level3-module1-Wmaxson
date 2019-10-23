@@ -5,6 +5,7 @@ public class _02_LogSearch {
   /* 
 	 * Crate a HashMap of Integers for the keys and Strings for the values.
 	 * Create a GUI with three buttons. 
+	 * 
 	 * Button 1: Add Entry
 	 * 				When this button is clicked, use an input dialog to ask the user to enter an ID number.
 	 * 				After an ID is entered, use another input dialog to ask the user to enter a name.
@@ -29,5 +30,6 @@ public class _02_LogSearch {
 	 * 				is not in the list. 
 	 *
 	 * */
+	
 	
 }
